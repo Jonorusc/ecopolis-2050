@@ -1,6 +1,6 @@
 # Ecópolis 2050 — MVP do jogo (concluído em 2026-10-27)
 
-Projeto de extensão Descomplica, tema ODS 13 (ação contra a mudança global do clima).
+Projeto de extensão universitária, tema ODS 13 (ação contra a mudança global do clima).
 Repositório: https://github.com/Jonorusc/ecopolis-2050 (público). Deploy importado na Vercel pelo autor.
 
 ## O que foi feito
