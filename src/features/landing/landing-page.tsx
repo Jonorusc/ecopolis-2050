@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SOURCES } from "@/content/lessons";
 import { GAME_RULES } from "@/content/rules";
-import { TileArt } from "@/features/game/components/tile-art";
+import { TileThumbnail } from "@/features/game/components/tile-art";
 import { WarmingStripes } from "@/features/game/components/warming-stripes";
 import styles from "./landing-page.module.css";
 
@@ -57,7 +57,7 @@ export function LandingPage() {
           {(["coal-plant", "solar-farm", "car-avenue", "transit-avenue", "degraded-land", "forest"] as const).map(
             (kind) => (
               <span key={kind} className={styles.previewTile}>
-                <TileArt kind={kind} />
+                <TileThumbnail kind={kind} />
               </span>
             ),
           )}

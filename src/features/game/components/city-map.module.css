@@ -1,23 +1,20 @@
 .city {
   position: relative;
+  padding: var(--space-3) var(--space-2) var(--space-2);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--sky);
+  background:
+    linear-gradient(to bottom, rgb(255 255 255 / 0%) 40%, rgb(120 100 80 / calc(var(--haze) * 40%))),
+    var(--sky);
   box-shadow: var(--shadow-card);
   transition: background-color var(--duration-slow) var(--ease-out);
 }
 
-.sky {
-  position: relative;
-  height: clamp(48px, 9vw, 96px);
-  background: linear-gradient(to bottom, rgb(255 255 255 / 0%), rgb(120 100 80 / calc(var(--haze) * 45%)));
-}
-
 .sun {
   position: absolute;
-  top: 25%;
-  right: 10%;
-  width: clamp(24px, 5vw, 44px);
+  top: var(--space-4);
+  right: 8%;
+  width: clamp(28px, 5vw, 48px);
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--color-sun);
@@ -25,60 +22,55 @@
   transition: box-shadow var(--duration-slow) var(--ease-out);
 }
 
-.grid {
-  display: grid;
-  gap: 2px;
-  padding: 2px;
-  background: rgb(23 37 43 / 25%);
+.map {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.island {
+  fill: #8a6a48;
 }
 
 .tile {
-  position: relative;
-  aspect-ratio: 1;
-  display: block;
-  border: 0;
-  padding: 0;
-  background: none;
-  overflow: hidden;
-  transition: opacity var(--duration-fast), filter var(--duration-fast);
-}
-
-.tile svg {
-  display: block;
-  width: 100%;
-  height: 100%;
+  transition:
+    opacity var(--duration-fast),
+    filter var(--duration-fast);
 }
 
 .picking .tile:not(.eligible) {
-  opacity: 0.35;
+  opacity: 0.4;
   filter: grayscale(0.7);
 }
 
 .eligible {
   cursor: pointer;
-  outline: 3px solid var(--color-sun);
-  outline-offset: -3px;
-  animation: pulse 1.4s ease-in-out infinite;
+  outline: none;
 }
 
-.eligible:hover {
-  filter: brightness(1.12);
-}
-
+.eligible:hover,
 .eligible:focus-visible {
-  outline: 4px solid var(--color-focus);
-  outline-offset: -4px;
-  animation: none;
+  filter: brightness(1.15) drop-shadow(0 0 3px var(--color-focus));
+}
+
+.highlight {
+  fill: rgb(233 164 38 / 22%);
+  stroke: var(--color-sun);
+  stroke-width: 2;
+  pointer-events: none;
+  animation: pulse 1.4s ease-in-out infinite;
 }
 
 @keyframes pulse {
   50% {
-    outline-color: var(--color-surface);
+    stroke: var(--color-surface);
+    fill: rgb(255 255 255 / 12%);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .eligible {
+  .highlight {
     animation: none;
   }
 }

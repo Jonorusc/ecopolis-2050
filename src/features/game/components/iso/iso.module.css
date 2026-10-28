@@ -1,0 +1,29 @@
+.smoke {
+  animation: drift 4s ease-in-out infinite;
+}
+
+.rotor {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spin 3.5s linear infinite;
+}
+
+@keyframes drift {
+  50% {
+    transform: translate(2px, -3px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smoke,
+  .rotor {
+    animation: none;
+  }
+}
