@@ -66,7 +66,7 @@ export function LandingPage() {
 
       <footer className={styles.footer}>
         <p>
-          Projeto de extensão universitária (Descomplica) sobre o{" "}
+          Projeto de extensão universitária sobre o{" "}
           <a href={SOURCES.sdg13.url} target="_blank" rel="noreferrer">
             ODS 13
           </a>
