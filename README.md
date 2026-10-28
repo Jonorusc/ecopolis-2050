@@ -1,7 +1,6 @@
 # Ecópolis 2050
 
 Mini game educativo em 2D sobre o **ODS 13: Ação contra a mudança global do clima**.
-Projeto de extensão universitária da **Descomplica**.
 
 Você é prefeito(a) de uma cidade fictícia de 2026 a 2050. A cada turno (2 anos) escolhe até 3 ações:
 trocar termelétricas por energia solar e eólica, criar corredores de ônibus e ciclovias, reflorestar,
