@@ -1,0 +1,84 @@
+.city {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--sky);
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--duration-slow) var(--ease-out);
+}
+
+.sky {
+  position: relative;
+  height: clamp(48px, 9vw, 96px);
+  background: linear-gradient(to bottom, rgb(255 255 255 / 0%), rgb(120 100 80 / calc(var(--haze) * 45%)));
+}
+
+.sun {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  width: clamp(24px, 5vw, 44px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-sun);
+  box-shadow: 0 0 calc(12px + var(--haze) * 40px) calc(var(--haze) * 18px) rgb(233 164 38 / 60%);
+  transition: box-shadow var(--duration-slow) var(--ease-out);
+}
+
+.grid {
+  display: grid;
+  gap: 2px;
+  padding: 2px;
+  background: rgb(23 37 43 / 25%);
+}
+
+.tile {
+  position: relative;
+  aspect-ratio: 1;
+  display: block;
+  border: 0;
+  padding: 0;
+  background: none;
+  overflow: hidden;
+  transition: opacity var(--duration-fast), filter var(--duration-fast);
+}
+
+.tile svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.picking .tile:not(.eligible) {
+  opacity: 0.35;
+  filter: grayscale(0.7);
+}
+
+.eligible {
+  cursor: pointer;
+  outline: 3px solid var(--color-sun);
+  outline-offset: -3px;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.eligible:hover {
+  filter: brightness(1.12);
+}
+
+.eligible:focus-visible {
+  outline: 4px solid var(--color-focus);
+  outline-offset: -4px;
+  animation: none;
+}
+
+@keyframes pulse {
+  50% {
+    outline-color: var(--color-surface);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eligible {
+    animation: none;
+  }
+}

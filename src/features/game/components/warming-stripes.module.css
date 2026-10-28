@@ -1,0 +1,66 @@
+.figure {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.stripes {
+  display: flex;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.compact .stripes {
+  height: 28px;
+}
+
+.stripe {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.played {
+  transform-origin: bottom;
+  animation: rise var(--duration-slow) var(--ease-out);
+}
+
+.live {
+  position: relative;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgb(255 255 255 / 0%) 0 6px,
+    rgb(255 255 255 / 35%) 6px 9px
+  );
+}
+
+.empty {
+  background: repeating-linear-gradient(135deg, var(--color-paper) 0 4px, var(--color-line) 4px 5px);
+}
+
+.divider {
+  flex: 0 0 3px;
+  background: var(--color-ink);
+}
+
+.caption {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-family: var(--font-data);
+  font-size: var(--text-xs);
+  color: var(--color-ink-soft);
+}
+
+.captionCenter {
+  text-align: center;
+}
+
+@keyframes rise {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}

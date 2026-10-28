@@ -1,0 +1,142 @@
+.page {
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-4) var(--space-5);
+  display: grid;
+  gap: var(--space-8);
+}
+
+.hero {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.eyebrow {
+  font-family: var(--font-data);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-leaf);
+}
+
+.title {
+  font-size: var(--text-hero);
+  font-weight: 800;
+}
+
+.title span {
+  color: var(--color-heat);
+}
+
+.thesis {
+  max-width: 34ch;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  line-height: 1.25;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-4);
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--color-ink);
+  color: var(--color-surface);
+  font-weight: 700;
+  font-size: var(--text-lg);
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+}
+
+.ctaNote {
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+.how {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: var(--space-5) var(--space-6);
+}
+
+.how h2 {
+  grid-column: 1 / -1;
+  font-size: var(--text-xl);
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.steps li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 0 var(--space-3);
+}
+
+.steps li::before {
+  content: counter(step);
+  grid-row: span 2;
+  font-family: var(--font-data);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-leaf);
+}
+
+.steps h3 {
+  font-size: var(--text-lg);
+}
+
+.steps p {
+  color: var(--color-ink-soft);
+}
+
+.preview {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px;
+  align-self: start;
+  padding: 3px;
+  border-radius: var(--radius-lg);
+  background: rgb(23 37 43 / 25%);
+  overflow: hidden;
+}
+
+.previewTile svg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.footer {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-line);
+  font-size: var(--text-sm);
+  color: var(--color-ink-soft);
+}
+
+@media (max-width: 760px) {
+  .how {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .preview {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
